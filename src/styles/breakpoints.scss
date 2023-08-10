@@ -1,0 +1,49 @@
+$mobile-min: 320px;
+$mobile-default: 375px;
+$mobile-lg: 640px;
+$tablet-min: 768px;
+$desktop-min: 1024px;
+$desktop-lg: 1280px;
+$desktop-xl: 1440px;
+
+$breakpoints: (
+  "mobile-sm": (
+    min-width: $mobile-min,
+  ),
+  "mobile": (
+    min-width: $mobile-default,
+  ),
+  "mobile-tablet": (
+    min-width: $mobile-lg,
+  ),
+  "tablet": (
+    min-width: $tablet-min,
+  ),
+  "desktop": (
+    min-width: $desktop-min,
+  ),
+  "desktop-lg": (
+    min-width: $desktop-lg,
+  ),
+  "desktop-xl": (
+    min-width: $desktop-xl,
+  ),
+) !default;
+
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

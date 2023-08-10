@@ -1,0 +1,28 @@
+@import "styles";
+
+@import "styles";
+
+.root {
+  max-width: 300px;
+  padding: 2rem 1.5rem;
+  border-radius: 5px;
+  margin: 0.25rem 0;
+  background-color: color("white");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include breakpoint("tablet") {
+    margin: 0.5rem;
+  }
+}
+
+.border {
+  border: solid 1px color("grey");
+}
+
+.title {
+  margin: 1rem 0;
+}

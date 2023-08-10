@@ -1,0 +1,22 @@
+@import "styles";
+
+.root {
+  width: 90%;
+  margin: auto;
+  padding: 2rem 0;
+
+  @include breakpoint("tablet") {
+    width: 80%;
+  }
+
+  @include breakpoint("desktop") {
+    max-width: 1220px;
+    padding: 2rem 0;
+  }
+}
+
+.full {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}

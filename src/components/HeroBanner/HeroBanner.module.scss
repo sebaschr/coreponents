@@ -1,0 +1,32 @@
+@import "styles";
+
+.root {
+  padding: space(20) 0;
+  width: 100%;
+}
+
+.background {
+  background-color: color("white");
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  position: relative;
+  z-index: $z-index-relative;
+  @include full-width-container();
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: space(2);
+
+  @include breakpoint("tablet") {
+    font-size: 5rem;
+  }
+
+  @include breakpoint("desktop") {
+    font-size: 8rem;
+  }
+}

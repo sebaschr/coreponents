@@ -1,0 +1,23 @@
+@import "../../../styles/fonts.scss";
+
+.root {
+  @include text-basic();
+}
+
+.size {
+  &--sm {
+    font-size: 0.8rem;
+  }
+
+  &--md {
+    font-size: 1rem;
+  }
+
+  &--lg {
+    font-size: 1.25rem;
+  }
+
+  &--xl {
+    font-size: 1.5rem;
+  }
+}

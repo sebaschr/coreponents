@@ -1,0 +1,11 @@
+@import "./reset.scss";
+@import "./breakpoints.scss";
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./mixins.scss";
+@import "./z-index.scss";
+@import "./spacing.scss";
+
+.sr-only {
+  display: none;
+}

@@ -1,0 +1,22 @@
+$colors: (
+  "black": #000,
+  "white": #fff,
+  "yellow": yellow,
+  //Greys
+  "grey": #c0c0c0,
+  "grey-opacity": #c0c0c055,
+  "grey-light": #c0c0c0,
+);
+
+@function color($color-key) {
+  @if map-has-key($colors, $color-key) {
+    @return map-get($colors, $color-key);
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$color-key}`. "
+                + "Available colors values are: #{map-keys($colors)}.";
+    @return none;
+  }
+}

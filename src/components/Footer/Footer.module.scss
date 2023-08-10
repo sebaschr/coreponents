@@ -1,0 +1,45 @@
+@import "styles";
+
+.root {
+  background-color: color("black");
+  padding: 1rem;
+  color: color("white");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include breakpoint("desktop") {
+    padding: 1rem 2rem;
+  }
+}
+
+.back-to-top {
+  position: absolute;
+  top: -4rem;
+  right: 0.5rem;
+  background-color: color("white");
+  padding: 1rem;
+  z-index: 3;
+  border-radius: 50%;
+  border: solid 1px color("grey");
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.socials {
+  & svg {
+    background-color: color("black");
+  }
+
+  & path {
+    fill: color("white");
+  }
+}
+
+.social {
+  margin-right: 0.5rem;
+}

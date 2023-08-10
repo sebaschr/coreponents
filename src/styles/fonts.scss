@@ -1,0 +1,52 @@
+//Regular
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url("../assets/fonts/RobotoMono-Regular.ttf") format("truetype");
+    font-weight:400;
+    font-style:normal ;
+}
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url("../assets/fonts/RobotoMono-Italic.ttf") format("truetype");
+    font-weight:400;
+    font-style: italic;
+}
+
+
+//Bold
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url("../assets/fonts/RobotoMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url("../assets/fonts/RobotoMono-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+//Light
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url("../assets/fonts/RobotoMono-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url("../assets/fonts/RobotoMono-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@mixin text-basic {
+    font-family: "RobotoMono", monospace;
+}

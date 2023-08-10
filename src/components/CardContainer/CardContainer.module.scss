@@ -1,0 +1,17 @@
+@import "styles";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint("tablet") {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.background {
+  background-color: color("grey-light");
+}

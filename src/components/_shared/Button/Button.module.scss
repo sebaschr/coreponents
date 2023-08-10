@@ -1,0 +1,24 @@
+.root {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.size {
+  &--sm {
+    padding: 0.5rem 0.25rem;
+  }
+
+  &--md {
+    padding: 0.75rem 0.5rem;
+  }
+
+  &--lg {
+    padding: 1rem 1.25rem;
+  }
+
+  &--xl {
+    padding: 1.25rem 1.5rem;
+  }
+}

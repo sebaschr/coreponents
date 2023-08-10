@@ -1,0 +1,82 @@
+// SCSS STYLES, ANY CHANGES HERE ALSO SHOULD BE APPLIED IN utils/constants.ts AS WELL
+$spacing: (
+  "px": 1px,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  8: 2rem,
+  9: 2.25rem,
+  10: 2.5rem,
+  11: 2.75rem,
+  12: 3rem,
+  13: 3.25rem,
+  14: 3.5rem,
+  15: 3.75rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+);
+
+//@param $space-key is a key and it should be mentioned in the $spacing variable.
+//@param-two, @param-three, @param-four are optional keys
+//and they should be mentioned in the same $spacing variable as well.
+@function space(
+  $space-key,
+  $space-key-two: null,
+  $space-key-three: null,
+  $space-key-four: null
+) {
+  @if $space-key-two and $space-key-three and $space-key-four {
+    @return map-get($spacing, $space-key) map-get($spacing, $space-key-two)
+      map-get($spacing, $space-key-three) map-get($spacing, $space-key-four);
+  } @else {
+    @if $space-key-two and $space-key-three {
+      @return map-get($spacing, $space-key) map-get($spacing, $space-key-two)
+        map-get($spacing, $space-key-three);
+    } @else {
+      @if $space-key-two {
+        @return map-get($spacing, $space-key) map-get($spacing, $space-key-two);
+      } @else {
+        @return map-get($spacing, $space-key);
+      }
+    }
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return calc($number / ($number * 0 + 1px));
+  }
+
+  @return $number;
+}
+
+@function convertPxToRem($value) {
+  @return calc(strip-unit($value) / 16) + rem;
+}
+
+@function toRem(
+  $value,
+  $value-two: null,
+  $value-three: null,
+  $value-four: null
+) {
+  @if $value-two and $value-three and $value-four {
+    @return convertPxToRem($value) convertPxToRem($value-two)
+      convertPxToRem($value-three) convertPxToRem($value-four);
+  } @else {
+    @if $value-two and $value-three {
+      @return convertPxToRem($value) convertPxToRem($value-two)
+        convertPxToRem($value-three);
+    } @else {
+      @if $value-two {
+        @return convertPxToRem($value) convertPxToRem($value-two);
+      } @else {
+        @return convertPxToRem($value);
+      }
+    }
+  }
+}
