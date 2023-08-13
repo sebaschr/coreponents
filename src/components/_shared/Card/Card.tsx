@@ -32,12 +32,7 @@ const Card = ({
       <Heading content={heading} className={styles.title} />
       <Text content={text} className={styles.description} />
       {isButton ? (
-        <Button
-          href={href}
-          variant="primary"
-          target={target}
-          className={styles.button}
-        />
+        <Button variant="primary" className={styles.button} />
       ) : (
         href && <Link href={href} target={target} className={styles.link} />
       )}

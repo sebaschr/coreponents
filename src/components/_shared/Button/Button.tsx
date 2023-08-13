@@ -3,31 +3,31 @@ import { ButtonPropTypes } from "components/dialogProps";
 import { Icon, Text } from "components";
 import styles from "./Button.module.scss";
 import cx from "classnames";
-import { SIZE_SM } from "utils/constants";
+import { SIZE_MD, SIZE_SM } from "utils/constants";
 
 const Button = ({
-  href,
   variant,
-  target,
   iconName,
   iconSize = SIZE_SM,
+  size = SIZE_MD,
   onClick,
   children,
   linkText,
   className,
   label,
 }: ButtonPropTypes) => {
-  function onRedirect() {
-    window.location.href = href;
-  }
-
   return (
     <button
       type="button"
-      className={cx(styles.root, styles[`type--${variant}`], className)}
-      onClick={href ? onRedirect : onClick}
-      aria-label={label}
-      title={label}
+      className={cx(
+        styles.root,
+        styles[`variant--${variant}`],
+        styles[`size--${size}`],
+        className
+      )}
+      aria-label={label || linkText}
+      title={label || linkText}
+      onClick={onClick}
     >
       {children ? (
         children

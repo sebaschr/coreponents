@@ -40,7 +40,7 @@ const NavHeader = () => {
 
   const Logo = () => {
     return (
-      <Button variant="link-text">
+      <Button variant="link">
         <Image
           src="https://www.freepnglogos.com/uploads/xbox-logo-black-png-7.png"
           altText="logo"
@@ -66,7 +66,6 @@ const NavHeader = () => {
               className={styles.burger}
               iconName={isOpen ? "x" : "burger"}
               variant="primary"
-              target="_self"
               iconSize={isOpen ? SIZE_MD : SIZE_LG}
             />
           </div>

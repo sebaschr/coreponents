@@ -1,0 +1,104 @@
+@mixin btn-mixin(
+  $bg-color,
+  $text-color,
+  $border-color,
+  $bg-hover-color,
+  $text-hover-color,
+  $border-hover-color,
+  $bg-focus-color,
+  $text-focus-color,
+  $border-focus-color,
+  $outline-focus-color
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: solid 1px $border-color;
+
+  &:hover {
+    background-color: $bg-hover-color;
+    color: $text-hover-color;
+    border: solid 1px $border-hover-color;
+  }
+
+  &:focus {
+    background-color: $bg-focus-color;
+    color: $text-focus-color;
+    border: solid 1px $border-focus-color;
+    outline: solid 4px $outline-focus-color;
+  }
+}
+
+@mixin primary-btn {
+  @include btn-mixin(
+    color("black"),
+    color("white"),
+    color("black"),
+    color("yellow"),
+    color("black"),
+    color("yellow"),
+    color("black"),
+    color("white"),
+    color("black"),
+    color("light-blue")
+  );
+}
+
+@mixin secondary-btn {
+  @include btn-mixin(
+    color("white"),
+    color("black"),
+    color("black"),
+    color("black"),
+    color("white"),
+    color("black"),
+    color("white"),
+    color("black"),
+    color("black"),
+    color("light-blue")
+  );
+}
+
+@mixin tertiary-btn {
+  @include btn-mixin(
+    color("yellow"),
+    color("black"),
+    color("black"),
+    color("white"),
+    color("black"),
+    color("black"),
+    color("yellow"),
+    color("white"),
+    color("black"),
+    color("light-blue")
+  );
+}
+
+@mixin transparent-btn {
+  @include btn-mixin(
+    transparent,
+    color("black"),
+    transparent,
+    color("white"),
+    color("black"),
+    color("white"),
+    transparent,
+    color("black"),
+    transparent,
+    color("light-blue")
+  );
+}
+
+@mixin transparent-white-btn {
+  @include btn-mixin(
+    transparent,
+    color("white"),
+    color("white"),
+    color("white"),
+    color("black"),
+    color("white"),
+    transparent,
+    color("white"),
+    color("white"),
+    color("light-blue")
+  );
+}

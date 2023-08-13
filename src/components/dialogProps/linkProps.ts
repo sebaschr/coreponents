@@ -15,7 +15,5 @@ export interface LinkProps extends sharedLinkProps, noColor {
 export interface ButtonProps extends sharedLinkProps, noColor {
     variant: BUTTON_VARIANTS;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
-    target?: LINK_TARGETS;
-    href?: string;
     label?: string;
 }

@@ -3,7 +3,7 @@ export type SIZES_TYPES = 'sm' | 'md' | 'lg' | 'xl';
 export type LINK_TARGETS = '_blank' | '_self';
 export type ALIGNMENTS = 'left' | 'right' | 'center';
 export type SHAPES = 'triangle' | 'circle' | 'box';
-export type BUTTON_VARIANTS = 'primary' | 'secondary' | 'link-text';
+export type BUTTON_VARIANTS = 'primary' | 'secondary' | 'tertiary' | 'transparent' | 'transparent-white' | 'link';
 
 export const SIZE_SM = 'sm';
 export const SIZE_MD = 'md';

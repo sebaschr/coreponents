@@ -1,8 +1,40 @@
+@import "styles";
+
 .root {
   border: 0;
   padding: 0;
   cursor: pointer;
-  background-color: transparent;
+  border-radius: toRem(5px);
+  margin: 0 0.5rem;
+  transition: 0.5s;
+  color: color("black");
+}
+
+.variant {
+  &--primary {
+    @include primary-btn();
+  }
+
+  &--secondary {
+    @include secondary-btn();
+  }
+
+  &--tertiary {
+    @include tertiary-btn();
+  }
+
+  &--transparent {
+    @include transparent-btn();
+  }
+
+  &--transparent-white {
+    @include transparent-white-btn();
+  }
+
+  &--link {
+    border-radius: 0;
+    text-decoration: underline;
+  }
 }
 
 .size {
