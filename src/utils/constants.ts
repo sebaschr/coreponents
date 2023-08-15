@@ -10,6 +10,12 @@ export const SIZE_MD = 'md';
 export const SIZE_LG = 'lg';
 export const SIZE_XL = 'xl';
 
+export const BUTTON_PRIMARY: BUTTON_VARIANTS = 'primary';
+export const BUTTON_SECONDARY: BUTTON_VARIANTS = 'secondary';
+export const BUTTON_TERTIARY: BUTTON_VARIANTS = 'tertiary';
+export const BUTTON_TRANSPARENT: BUTTON_VARIANTS = 'transparent';
+export const BUTTON_TRANSPARENT_WHITE: BUTTON_VARIANTS = 'transparent-white';
+export const BUTTON_LINK: BUTTON_VARIANTS = 'link';
 
 //IMAGE
 export const IMAGE_STRING: string = 'IMAGE';

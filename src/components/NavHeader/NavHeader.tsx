@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 import styles from "./NavHeader.module.scss";
 import { Text, Link, Image, Button } from "components";
 import { reportWindowSize } from "utils/functions";
-import { SIZE_LG, SIZE_MD } from "utils/constants";
+import {
+  SIZE_LG,
+  SIZE_MD,
+  LINK_TARGET_EXTERNAL,
+  BUTTON_TRANSPARENT,
+} from "utils/constants";
+import cx from "classnames";
+
+// TO DO:Nav Menu Items Submenus & Animations
 
 const NavHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,17 +30,30 @@ const NavHeader = () => {
 
   const NavList = () => {
     return (
-      <ul className={styles.navList}>
-        <li className={styles.navItem}>
-          <Link target={"_blank"} href="/" linkText="About Me" size={SIZE_LG} />
+      <ul className={styles["nav-list"]}>
+        <li className={styles["nav-item"]}>
+          <Link
+            target={LINK_TARGET_EXTERNAL}
+            href="/"
+            linkText="Nav Item One"
+            size={SIZE_MD}
+          />
         </li>
-        {isDesktop && (
-          <li className={styles.navItem}>
-            <Logo />
-          </li>
-        )}
-        <li className={styles.navItem}>
-          <Link target={"_blank"} href="/" linkText="Work" size={SIZE_LG} />
+        <li className={styles["nav-item"]}>
+          <Link
+            target={LINK_TARGET_EXTERNAL}
+            href="/"
+            linkText="Nav Item Two"
+            size={SIZE_MD}
+          />
+        </li>
+        <li className={styles["nav-item"]}>
+          <Link
+            target={LINK_TARGET_EXTERNAL}
+            href="/"
+            linkText="Nav Item Three"
+            size={SIZE_MD}
+          />
         </li>
       </ul>
     );
@@ -40,23 +61,34 @@ const NavHeader = () => {
 
   const Logo = () => {
     return (
-      <Button variant="link">
+      <Link
+        href="/"
+        target={LINK_TARGET_EXTERNAL}
+        className={styles["logo-container"]}
+      >
         <Image
-          src="https://www.freepnglogos.com/uploads/xbox-logo-black-png-7.png"
+          src="https://www.edigitalagency.com.au/wp-content/uploads/new-Instagram-logo-white-glyph-900x900.png"
           altText="logo"
           className={styles.logo}
         />
         <Text className="sr-only" content="Logo" />
-      </Button>
+      </Link>
     );
   };
 
   return (
-    <nav className={styles.root}>
+    <nav
+      className={cx(styles.root, {
+        [styles["root--open"]]: isOpen && !isDesktop,
+      })}
+    >
       {isDesktop ? (
-        <NavList />
+        <div className={styles["nav-container"]}>
+          <Logo />
+          <NavList />
+        </div>
       ) : (
-        <>
+        <div className={styles["mobile-menu-container"]}>
           <div className={styles["mobile-container"]}>
             <Logo />
             <Button
@@ -65,7 +97,7 @@ const NavHeader = () => {
               }}
               className={styles.burger}
               iconName={isOpen ? "x" : "burger"}
-              variant="primary"
+              variant={BUTTON_TRANSPARENT}
               iconSize={isOpen ? SIZE_MD : SIZE_LG}
             />
           </div>
@@ -75,7 +107,7 @@ const NavHeader = () => {
               <NavList />
             </div>
           )}
-        </>
+        </div>
       )}
     </nav>
   );

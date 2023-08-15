@@ -1,25 +1,52 @@
 @import "styles";
 
 .root {
-  display: flex;
   position: sticky;
   width: 100%;
-  padding: 2rem 0;
   top: 0;
   align-items: center;
-  background-color: color("white");
+  background-color: color("black");
   flex-direction: column;
   z-index: $z-index-nav;
 
+  &--open {
+    height: 100vh;
+    position: absolute;
+  }
+
   @include breakpoint("desktop") {
+    padding: 2rem 0;
     flex-direction: row;
     justify-content: center;
-    position: absolute;
-    background-color: transparent;
+    color: color("white");
   }
 }
 
-.navList {
+.burger {
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg,
+  g,
+  path,
+  polygon {
+    fill: white;
+    stroke: white;
+  }
+}
+
+.nav-container {
+  display: flex;
+
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.nav-list {
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
@@ -30,23 +57,22 @@
   }
 }
 
-.navItem {
+.nav-item {
   display: flex;
   margin: 1rem 0;
   transition: ease-in-out 0.3s;
 
   & > a {
-    color: color("black");
-  }
-
-  &:hover {
-    transform: scale(1.15);
+    color: color("white");
   }
 
   @include breakpoint("desktop") {
     & > a {
       margin: 0 1rem;
-      color: color("black");
+    }
+
+    &:hover {
+      transform: scale(1.15);
     }
   }
 }
@@ -54,6 +80,7 @@
 .mobile {
   //mobile-container
   &-container {
+    padding: 2rem 0;
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -63,10 +90,13 @@
 
   //mobile-menu
   &-menu {
-    height: 100vh;
     width: 90%;
     margin: auto;
   }
+}
+
+.logo-container {
+  display: flex;
 }
 
 .logo {

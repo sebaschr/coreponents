@@ -3,10 +3,12 @@ import ReactDOM from "react-dom/client";
 import "styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
 import HomePage from "./website-skeleton/homepage";
+import NavHeader from "./components/NavHeader/NavHeader";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <NavHeader />
     <HomePage />
   </React.StrictMode>
 );
