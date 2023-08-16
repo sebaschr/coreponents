@@ -1,0 +1,39 @@
+.alignment {
+  &--center {
+    text-align: center;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.background-color {
+  &--black {
+    background-color: color("black");
+  }
+
+  &--white {
+    background-color: color("white");
+  }
+
+  &--grey {
+    background-color: color("grey");
+  }
+
+  &--grey-light {
+    background-color: color("grey-light");
+  }
+
+  &--grey-opacity {
+    background-color: color("grey-opacity");
+  }
+
+  &--yellow {
+    background-color: color("yellow");
+  }
+}

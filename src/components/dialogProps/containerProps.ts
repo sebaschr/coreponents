@@ -1,12 +1,21 @@
 import { Skill } from "services/models/models";
-import { ALIGNMENTS, THEME_VALUES } from "utils/constants";
+import { COLOR_VALUES, ALIGNMENTS, THEME_VALUES, LINK_TARGETS } from "utils/constants";
 import { classNameSizeandChildren, onlyChildren } from "./sharedProps";
 
 type sharedBannerProps = {
     alignment?: ALIGNMENTS;
     heading: string;
     text?: string;
-    hasBackground?: boolean;
+    backgroundColor?: COLOR_VALUES;
+
+    primaryBtnText?: string;
+    primaryBtnHref?: string;
+    primaryBtnTarget?: LINK_TARGETS;
+
+    secondaryBtnText?: string;
+    secondaryBtnHref?: string;
+    secondaryBtnTarget?: LINK_TARGETS;
+
 }
 
 export interface BannerProps extends sharedBannerProps {
@@ -16,7 +25,9 @@ export interface BannerProps extends sharedBannerProps {
 export interface HeroBannerProps extends sharedBannerProps {
     imageSrc?: string;
     imageAlt?: string;
-    isBackgroundImage?: boolean;
+    backgroundImageSrc?: string;
+    imageFirst?: boolean
+
 }
 
 export interface ContainerProps extends classNameSizeandChildren {

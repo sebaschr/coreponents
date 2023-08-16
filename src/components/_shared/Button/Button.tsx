@@ -15,7 +15,14 @@ const Button = ({
   linkText,
   className,
   label,
+  href,
 }: ButtonPropTypes) => {
+  function redirect() {
+    if (href) {
+      window.location.href = href;
+    }
+  }
+
   return (
     <button
       type="button"
@@ -27,7 +34,7 @@ const Button = ({
       )}
       aria-label={label || linkText}
       title={label || linkText}
-      onClick={onClick}
+      onClick={href ? redirect : onClick}
     >
       {children ? (
         children

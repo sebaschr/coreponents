@@ -17,6 +17,11 @@ export const BUTTON_TRANSPARENT: BUTTON_VARIANTS = 'transparent';
 export const BUTTON_TRANSPARENT_WHITE: BUTTON_VARIANTS = 'transparent-white';
 export const BUTTON_LINK: BUTTON_VARIANTS = 'link';
 
+export const ALIGNMENT_LEFT: ALIGNMENTS = 'left';
+export const ALIGNMENT_RIGHT: ALIGNMENTS = 'right';
+export const ALIGNMENT_CENTER: ALIGNMENTS = 'center';
+
+
 //IMAGE
 export const IMAGE_STRING: string = 'IMAGE';
 
@@ -80,8 +85,17 @@ type colors = {
 }
 
 
-type COLOR_VALUES = 'black' | 'white' | 'yellow' | 'grey' | 'grey-opacity' | 'grey-light';
-export type THEME_VALUES = 'light' | 'dark';
+export type COLOR_VALUES = 'black' | 'white' | 'yellow' | 'grey' | 'grey-opacity' | 'grey-light';
+
+export const COLOR_BLACK: COLOR_VALUES = 'black';
+export const COLOR_WHITE: COLOR_VALUES = 'white';
+export const COLOR_YELLOW: COLOR_VALUES = 'yellow';
+export const COLOR_GREY: COLOR_VALUES = 'grey';
+export const COLOR_GREY_OPACITY: COLOR_VALUES = 'grey-opacity';
+export const COLOR_GREY_LIGHT: COLOR_VALUES = 'grey-light';
+
+
+export type THEME_VALUES = 'light' | 'dark' | 'golden';
 
 export const THEME_LIGHT: THEME_VALUES = 'light';
 export const THEME_DARK: THEME_VALUES = 'dark';

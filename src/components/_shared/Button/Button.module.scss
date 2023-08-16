@@ -5,7 +5,7 @@
   padding: 0;
   cursor: pointer;
   border-radius: toRem(5px);
-  margin: 0 0.5rem;
+  margin: 0 space(2);
   transition: 0.5s;
   color: color("black");
 }
@@ -39,18 +39,18 @@
 
 .size {
   &--sm {
-    padding: 0.5rem 0.25rem;
+    padding: space(2) space(1);
   }
 
   &--md {
-    padding: 0.75rem 0.5rem;
+    padding: space(3) space(2);
   }
 
   &--lg {
-    padding: 1rem 1.25rem;
+    padding: space(4) space(5);
   }
 
   &--xl {
-    padding: 1.25rem 1.5rem;
+    padding: space(5) space(6);
   }
 }

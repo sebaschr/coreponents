@@ -4,7 +4,6 @@ import { HeroBanner } from "components";
 const WorkPage = () => {
   return (
     <div>
-      <HeroBanner heading="about me" text="i'm a web developer" />
       {/* 
      Stack / Skills
       <CardContainer maxItemsDesktop={3} maxItemsMobile={1}>

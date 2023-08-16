@@ -2,7 +2,7 @@
 
 .root {
   background-color: color("black");
-  padding: 1rem;
+  padding: space(4);
   color: color("white");
   display: flex;
   justify-content: space-between;
@@ -10,16 +10,16 @@
   position: relative;
 
   @include breakpoint("desktop") {
-    padding: 1rem 2rem;
+    padding: space(4) space(8);
   }
 }
 
 .back-to-top {
   position: absolute;
-  top: -4rem;
-  right: 0.5rem;
+  top: -(space(16));
+  right: space(2);
   background-color: color("white");
-  padding: 1rem;
+  padding: space(4);
   z-index: 3;
   border-radius: 50%;
   border: solid 1px color("grey");
@@ -41,5 +41,5 @@
 }
 
 .social {
-  margin-right: 0.5rem;
+  margin-right: space(2);
 }
