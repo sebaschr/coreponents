@@ -4,9 +4,15 @@ $filter-opacity: 0.35;
 
 .root {
   width: 100%;
-  min-height: 20rem;
+  min-height: 10rem;
   position: relative;
   display: flex;
+  flex-direction: column;
+
+  @include breakpoint("desktop") {
+    flex-direction: row;
+    min-height: 20rem;
+  }
 }
 
 .container {
@@ -83,10 +89,21 @@ $filter-opacity: 0.35;
 }
 
 .image {
-  height: auto;
+  max-height: 35rem;
   width: auto;
+
+  &--hidden {
+    display: none;
+  }
 
   &--left {
     order: -1;
+  }
+
+  @include breakpoint("desktop") {
+    height: auto;
+    width: auto;
+    max-height: none;
+    display: flex;
   }
 }

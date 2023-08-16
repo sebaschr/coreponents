@@ -27,6 +27,7 @@ export interface HeroBannerProps extends sharedBannerProps {
     imageAlt?: string;
     backgroundImageSrc?: string;
     imageFirst?: boolean
+    hideOnMobile?: boolean;
 
 }
 

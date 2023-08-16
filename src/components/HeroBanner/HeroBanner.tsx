@@ -11,7 +11,7 @@ import {
 } from "utils/constants";
 import cx from "classnames";
 import { HeroBannerPropTypes } from "components/dialogProps";
-import { getGlobalClasses } from "utils/functions";
+import { getGlobalClasses, reportWindowSize } from "utils/functions";
 
 const HeroBanner = ({
   heading,
@@ -28,6 +28,7 @@ const HeroBanner = ({
   secondaryBtnTarget = LINK_TARGET_INTERNAL,
   secondaryBtnText,
   imageFirst = BOOLEAN_FALSE,
+  hideOnMobile = BOOLEAN_FALSE,
 }: HeroBannerPropTypes) => {
   const globalClasses = getGlobalClasses(
     ["backgroundColor"],
@@ -91,6 +92,7 @@ const HeroBanner = ({
           altText={imageAlt}
           className={cx(styles.image, {
             [styles["image--left"]]: imageFirst,
+            [styles["image--hidden"]]: hideOnMobile,
           })}
         />
       )}
