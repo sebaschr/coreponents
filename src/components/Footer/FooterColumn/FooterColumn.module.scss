@@ -1,0 +1,10 @@
+@import "styles";
+
+.root {
+  margin: space(3) space(6) space(3) 0;
+}
+
+.heading {
+  font-size: toRem(18px);
+  margin-bottom: space(4);
+}

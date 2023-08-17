@@ -1,0 +1,28 @@
+@import "styles";
+
+.root {
+  width: 100%;
+  margin: auto;
+}
+
+.size {
+  &--xl {
+    height: toRem(6px);
+  }
+
+  &--lg {
+    height: toRem(4px);
+  }
+
+  &--md {
+    height: toRem(2px);
+  }
+
+  &--sm {
+    height: toRem(1px);
+  }
+
+  &--xs {
+    height: toRem(0.5px);
+  }
+}

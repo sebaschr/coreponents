@@ -3,4 +3,8 @@
 .root {
   text-decoration: none;
   color: color("black");
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

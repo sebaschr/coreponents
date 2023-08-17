@@ -6,6 +6,8 @@ export { default as Link } from './_shared/Link';
 export { default as Icon } from './_shared/Icon';
 export { default as Button } from './_shared/Button';
 export { default as Card } from './_shared/Card';
+export { default as Banner } from './_shared/Banner';
+export { default as Spacer } from './_shared/Spacer';
 
 export { default as CardContainer } from './CardContainer/CardContainer';
 export { default as HeroBanner } from './HeroBanner/HeroBanner';

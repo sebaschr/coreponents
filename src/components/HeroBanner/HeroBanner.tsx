@@ -11,7 +11,7 @@ import {
 } from "utils/constants";
 import cx from "classnames";
 import { HeroBannerPropTypes } from "components/dialogProps";
-import { getGlobalClasses, reportWindowSize } from "utils/functions";
+import { getGlobalClasses } from "utils/functions";
 
 const HeroBanner = ({
   heading,

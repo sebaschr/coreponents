@@ -76,16 +76,20 @@
 @mixin transparent-btn {
   @include btn-mixin(
     transparent,
-    color("black"),
-    transparent,
-    color("white"),
-    color("black"),
     color("white"),
     transparent,
-    color("black"),
+    transparent,
+    color("white"),
+    transparent,
+    transparent,
+    color("white"),
     transparent,
     color("light-blue")
   );
+
+  &:hover {
+    opacity: 0.75;
+  }
 }
 
 @mixin transparent-white-btn {
@@ -96,8 +100,8 @@
     color("white"),
     color("black"),
     color("white"),
-    transparent,
     color("white"),
+    color("black"),
     color("white"),
     color("light-blue")
   );

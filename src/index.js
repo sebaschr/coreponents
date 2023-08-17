@@ -4,12 +4,14 @@ import "styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
 import HomePage from "./website-skeleton/homepage";
 import NavHeader from "./components/NavHeader/NavHeader";
+import Footer from "./components/Footer/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <NavHeader />
     <HomePage />
+    <Footer />
   </React.StrictMode>
 );
 

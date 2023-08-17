@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./NavHeader.module.scss";
-import { Text, Link, Image, Button } from "components";
+import { Text, Link, Image, Button, Banner } from "components";
 import { reportWindowSize } from "utils/functions";
 import {
   SIZE_LG,
@@ -82,6 +82,9 @@ const NavHeader = () => {
         [styles["root--open"]]: isOpen && !isDesktop,
       })}
     >
+      <Banner>
+        <Text content="This is a banner" />
+      </Banner>
       {isDesktop ? (
         <div className={styles["nav-container"]}>
           <Logo />

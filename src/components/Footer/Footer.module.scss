@@ -5,9 +5,12 @@
   padding: space(4);
   color: color("white");
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   position: relative;
+
+  a {
+    color: color("white");
+  }
 
   @include breakpoint("desktop") {
     padding: space(4) space(8);
@@ -16,8 +19,9 @@
 
 .back-to-top {
   position: absolute;
-  top: -(space(16));
-  right: space(2);
+  top: auto;
+  bottom: space(20);
+  right: space(4);
   background-color: color("white");
   padding: space(4);
   z-index: 3;
@@ -25,7 +29,8 @@
   border: solid 1px color("grey");
   opacity: 0.5;
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 1;
   }
 }
@@ -41,5 +46,26 @@
 }
 
 .social {
-  margin-right: space(2);
+  margin: 0 space(2);
+  padding: 0;
+}
+
+.bottom-container {
+  margin-top: space(4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  margin: space(2) 0;
+  display: block;
+}
+
+.container {
+  margin-bottom: space(4);
+  display: flex;
+  justify-content: flex-start;
+  padding: space(8) 0 space(1);
+  flex-wrap: wrap;
 }

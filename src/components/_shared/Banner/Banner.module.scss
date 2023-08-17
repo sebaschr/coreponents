@@ -1,0 +1,17 @@
+@import "styles";
+
+.root {
+  position: sticky;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - space(16));
+  margin: auto;
+  color: color("white");
+  padding: space(4) space(8);
+
+  svg {
+    fill: color("white");
+  }
+}

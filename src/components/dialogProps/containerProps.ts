@@ -1,6 +1,5 @@
-import { Skill } from "services/models/models";
 import { COLOR_VALUES, ALIGNMENTS, THEME_VALUES, LINK_TARGETS } from "utils/constants";
-import { classNameSizeandChildren, onlyChildren } from "./sharedProps";
+import { classNameSizeandChildren, onlyChildren, onlySize } from "./sharedProps";
 
 type sharedBannerProps = {
     alignment?: ALIGNMENTS;
@@ -18,8 +17,8 @@ type sharedBannerProps = {
 
 }
 
-export interface BannerProps extends sharedBannerProps {
-    textList?: Skill[];
+export interface BannerProps extends onlyChildren {
+    backgroundColor?: COLOR_VALUES;
 }
 
 export interface HeroBannerProps extends sharedBannerProps {
@@ -38,3 +37,7 @@ export interface ContainerProps extends classNameSizeandChildren {
 };
 
 export interface PageBackgroundProps extends onlyChildren { };
+
+export interface SpacerProps extends onlySize {
+    backgroundColor?: COLOR_VALUES;
+};
