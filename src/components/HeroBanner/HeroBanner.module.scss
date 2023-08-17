@@ -4,14 +4,18 @@ $filter-opacity: 0.35;
 
 .root {
   width: 100%;
-  min-height: 10rem;
   position: relative;
-  display: flex;
-  flex-direction: column;
+}
 
-  @include breakpoint("desktop") {
-    flex-direction: row;
-    min-height: 20rem;
+.background {
+  position: absolute;
+  top: 0;
+  z-index: $z-index-background;
+  height: 100%;
+  width: 100vw;
+
+  &--filter {
+    z-index: $z-index-filter;
   }
 }
 
@@ -21,7 +25,21 @@ $filter-opacity: 0.35;
   flex-direction: column;
   flex: 1 1 0;
   position: relative;
-  z-index: $z-index-relative;
+  z-index: $z-index-container;
+
+  &--full {
+    width: 100%;
+    min-height: 10rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("desktop") {
+      flex-direction: row;
+      min-height: 20rem;
+      @include full-width-container();
+    }
+  }
 }
 
 .title {
@@ -91,6 +109,7 @@ $filter-opacity: 0.35;
 .image {
   max-height: 35rem;
   width: auto;
+  z-index: $z-index-image;
 
   &--hidden {
     display: none;

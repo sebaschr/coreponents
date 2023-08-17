@@ -15,7 +15,6 @@
   }
 
   @include breakpoint("desktop") {
-    padding: space(8) 0;
     flex-direction: row;
     justify-content: center;
     color: color("white");
@@ -41,9 +40,9 @@
 
 .nav-container {
   display: flex;
-
   justify-content: space-between;
-  padding: 0 space(8);
+  padding: space(8);
+  @include full-width-container();
 }
 
 .nav-list {
@@ -97,6 +96,7 @@
 
 .logo-container {
   display: flex;
+  align-items: center;
 }
 
 .logo {

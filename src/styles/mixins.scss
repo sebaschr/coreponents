@@ -1,10 +1,8 @@
 @mixin container {
   max-width: 1080px;
-  padding: space(8) space(4);
 }
 
 @mixin full-width-container {
-  padding: space(4);
-  max-width: 1240px;
+  max-width: toRem(1280px);
   margin: auto;
 }

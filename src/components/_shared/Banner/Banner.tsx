@@ -25,13 +25,15 @@ const Banner = ({
   return (
     <>
       {!isClosed && (
-        <div className={cx(globalClasses, styles.root)}>
-          <div className={styles["children-container"]}>{children}</div>
-          <Button
-            variant={BUTTON_TRANSPARENT}
-            iconName="x"
-            onClick={closeMenu}
-          />
+        <div className={cx(globalClasses)}>
+          <div className={styles.root}>
+            <div className={styles["children-container"]}>{children}</div>
+            <Button
+              variant={BUTTON_TRANSPARENT}
+              iconName="x"
+              onClick={closeMenu}
+            />
+          </div>
         </div>
       )}
     </>

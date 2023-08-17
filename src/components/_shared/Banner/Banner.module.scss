@@ -2,7 +2,7 @@
 
 .root {
   position: sticky;
-  z-index: 1000;
+  z-index: $z-index-banner;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,4 +14,6 @@
   svg {
     fill: color("white");
   }
+
+  @include full-width-container();
 }

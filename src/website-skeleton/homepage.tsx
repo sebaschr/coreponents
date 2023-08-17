@@ -39,7 +39,6 @@ const HomePage = () => {
           "https://media.istockphoto.com/id/483961501/photo/woman-dancing-singing-and-listening-to-the-music.jpg?s=612x612&w=0&k=20&c=i1QCMsD4K53Dp5DSEnnlVdn-xZYwX13XYdr2adNcDtE="
         }
         imageFirst
-        hideOnMobile
       />
     </>
   );

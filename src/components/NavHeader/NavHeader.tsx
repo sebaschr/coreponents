@@ -82,7 +82,7 @@ const NavHeader = () => {
         [styles["root--open"]]: isOpen && !isDesktop,
       })}
     >
-      <Banner>
+      <Banner backgroundColor="grey">
         <Text content="This is a banner" />
       </Banner>
       {isDesktop ? (

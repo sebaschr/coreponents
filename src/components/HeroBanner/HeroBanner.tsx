@@ -40,62 +40,72 @@ const HeroBanner = ({
     (secondaryBtnHref && secondaryBtnText);
 
   return (
-    <div
-      className={cx(styles.root, {
-        [globalClasses]: backgroundColor && !backgroundImageSrc,
-        [styles[`filter--${backgroundColor}`]]:
-          backgroundColor && backgroundImageSrc,
-      })}
-    >
-      {backgroundImageSrc && <Image isBackground src={backgroundImageSrc} />}
-
-      <div className={styles.container}>
-        <Heading
-          content={heading}
-          className={styles.title}
-          alignment={alignment}
-        />
-        <Text content={text} size={SIZE_XL} alignment={alignment} />
-
-        {validBtn && (
-          <div
-            className={cx(
-              styles["button-container"],
-              styles[`button-container--${alignment}`]
-            )}
-          >
-            {primaryBtnText && primaryBtnTarget && (
-              <Button
-                className={styles.button}
-                variant={BUTTON_PRIMARY}
-                linkText={primaryBtnText}
-                href={primaryBtnHref}
-                size="xl"
-              />
-            )}
-            {secondaryBtnText && secondaryBtnTarget && (
-              <Button
-                className={styles.button}
-                variant={BUTTON_SECONDARY}
-                linkText={secondaryBtnText}
-                href={secondaryBtnHref}
-                size="xl"
-              />
-            )}
-          </div>
-        )}
-      </div>
-
-      {imageSrc && (
+    <div className={cx(styles.root)}>
+      {backgroundImageSrc && (
         <Image
-          src={imageSrc}
-          altText={imageAlt}
-          className={cx(styles.image, {
-            [styles["image--left"]]: imageFirst,
-            [styles["image--hidden"]]: hideOnMobile,
-          })}
+          isBackground
+          src={backgroundImageSrc}
+          className={styles.background}
         />
       )}
+
+      <div
+        className={cx(styles.background, styles["background--filter"], {
+          [globalClasses]: backgroundColor && !backgroundImageSrc,
+          [styles[`filter--${backgroundColor}`]]:
+            backgroundColor && backgroundImageSrc,
+        })}
+      />
+
+      <div className={styles["container--full"]}>
+        <div className={styles.container}>
+          <Heading
+            content={heading}
+            className={styles.title}
+            alignment={alignment}
+          />
+          <Text content={text} size={SIZE_XL} alignment={alignment} />
+
+          {validBtn && (
+            <div
+              className={cx(
+                styles["button-container"],
+                styles[`button-container--${alignment}`]
+              )}
+            >
+              {primaryBtnText && primaryBtnTarget && (
+                <Button
+                  className={styles.button}
+                  variant={BUTTON_PRIMARY}
+                  linkText={primaryBtnText}
+                  href={primaryBtnHref}
+                  size="xl"
+                />
+              )}
+              {secondaryBtnText && secondaryBtnTarget && (
+                <Button
+                  className={styles.button}
+                  variant={BUTTON_SECONDARY}
+                  linkText={secondaryBtnText}
+                  href={secondaryBtnHref}
+                  size="xl"
+                />
+              )}
+            </div>
+          )}
+        </div>
+
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            altText={imageAlt}
+            className={cx(styles.image, {
+              [styles["image--left"]]: imageFirst,
+              [styles["image--hidden"]]: hideOnMobile,
+            })}
+          />
+        )}
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-@import "styles/colors";
+@import "styles";
 
 .root {
   background-color: color("white");
@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: -5;
+  z-index: $z-index-page-background;
   background: linear-gradient(
         135deg,
         color("grey-opacity") 25%,
