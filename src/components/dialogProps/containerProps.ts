@@ -1,5 +1,5 @@
-import { COLOR_VALUES, ALIGNMENTS, THEME_VALUES, LINK_TARGETS } from "utils/constants";
-import { classNameSizeandChildren, onlyChildren, onlySize } from "./sharedProps";
+import { COLOR_VALUES, ALIGNMENTS, THEME_VALUES, LINK_TARGETS, MEDIA_GRID_COLUMNS } from "utils/constants";
+import { classNameSizeandChildren, onlyChildren, onlySize, onlyClassName, classNameandChildren } from "./sharedProps";
 
 type sharedBannerProps = {
     alignment?: ALIGNMENTS;
@@ -40,4 +40,11 @@ export interface PageBackgroundProps extends onlyChildren { };
 
 export interface SpacerProps extends onlySize {
     backgroundColor?: COLOR_VALUES;
+};
+
+export interface MediaGridProps extends classNameandChildren {
+    mobileColumns: MEDIA_GRID_COLUMNS;
+    tabletColumns?: MEDIA_GRID_COLUMNS;
+    desktopColumns: MEDIA_GRID_COLUMNS;
+    withoutSpace?: boolean;
 };

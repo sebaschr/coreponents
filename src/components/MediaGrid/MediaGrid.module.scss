@@ -1,0 +1,57 @@
+@import "styles";
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &--spaced {
+    & > * {
+      padding: space(1);
+    }
+  }
+}
+
+@mixin media-grid-columns() {
+  &-1 {
+    & > * {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  &-2 {
+    & > * {
+      width: calc(50% - space(2));
+    }
+  }
+
+  &-3 {
+    & > * {
+      width: calc(33% - space(2));
+    }
+  }
+
+  &-4 {
+    & > * {
+      width: calc(25% - space(2));
+    }
+  }
+}
+
+.container {
+  &-mobile {
+    @include media-grid-columns();
+  }
+
+  @include breakpoint("tablet") {
+    &-tablet {
+      @include media-grid-columns();
+    }
+  }
+
+  @include breakpoint("desktop") {
+    &-desktop {
+      @include media-grid-columns();
+    }
+  }
+}

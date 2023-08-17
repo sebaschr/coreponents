@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./HeroBanner.module.scss";
-import { Image, Text, Heading, Button } from "components";
+import { Media, Text, Heading, Button } from "components";
 import {
   SIZE_XL,
   ALIGNMENT_CENTER,
@@ -42,7 +42,7 @@ const HeroBanner = ({
   return (
     <div className={cx(styles.root)}>
       {backgroundImageSrc && (
-        <Image
+        <Media
           isBackground
           src={backgroundImageSrc}
           className={styles.background}
@@ -96,7 +96,7 @@ const HeroBanner = ({
         </div>
 
         {imageSrc && (
-          <Image
+          <Media
             src={imageSrc}
             altText={imageAlt}
             className={cx(styles.image, {

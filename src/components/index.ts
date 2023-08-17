@@ -8,8 +8,9 @@ export { default as Button } from './_shared/Button';
 export { default as Card } from './_shared/Card';
 export { default as Banner } from './_shared/Banner';
 export { default as Spacer } from './_shared/Spacer';
+export { default as Embed } from './_shared/Embed';
+export { default as Media } from './_shared/Media';
 
-export { default as CardContainer } from './CardContainer/CardContainer';
 export { default as HeroBanner } from './HeroBanner/HeroBanner';
 export { default as NavHeader } from './NavHeader/NavHeader';
 export { default as PageBackground } from './PageBackground/PageBackground';

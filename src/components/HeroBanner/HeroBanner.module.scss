@@ -108,8 +108,10 @@ $filter-opacity: 0.35;
 
 .image {
   max-height: 35rem;
+  max-width: 100%;
   width: auto;
   z-index: $z-index-image;
+  object-fit: scale-down;
 
   &--hidden {
     display: none;
@@ -124,5 +126,6 @@ $filter-opacity: 0.35;
     width: auto;
     max-height: none;
     display: flex;
+    max-width: 30%;
   }
 }

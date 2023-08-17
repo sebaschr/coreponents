@@ -1,0 +1,12 @@
+@import "styles";
+
+.root {
+  min-height: toRem(200px);
+  min-width: toRem(300px);
+  display: block;
+
+  @include breakpoint("desktop") {
+    min-height: toRem(400px);
+    min-width: toRem(600px);
+  }
+}

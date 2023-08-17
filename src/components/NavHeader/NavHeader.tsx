@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./NavHeader.module.scss";
-import { Text, Link, Image, Button, Banner } from "components";
+import { Text, Link, Media, Button, Banner } from "components";
 import { reportWindowSize } from "utils/functions";
 import {
   SIZE_LG,
@@ -66,7 +66,7 @@ const NavHeader = () => {
         target={LINK_TARGET_EXTERNAL}
         className={styles["logo-container"]}
       >
-        <Image
+        <Media
           src="https://www.edigitalagency.com.au/wp-content/uploads/new-Instagram-logo-white-glyph-900x900.png"
           altText="logo"
           className={styles.logo}

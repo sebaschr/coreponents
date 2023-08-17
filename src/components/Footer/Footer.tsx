@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import { Text, Button, Link, Spacer } from "components";
 import { socials } from "services/data";
-import cx from "classnames";
 import {
   SOCIALS_ICONS,
   SIZE_MD,
@@ -26,6 +25,7 @@ const NavHeader = () => {
           socials.map((social, index) => {
             return (
               <Button
+                key={index}
                 className={styles.social}
                 variant={BUTTON_TRANSPARENT}
                 iconName={SOCIALS_ICONS[social.name]}

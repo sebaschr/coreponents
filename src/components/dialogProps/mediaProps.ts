@@ -1,9 +1,11 @@
-import { noChildren, classNameSizeandAltText } from "./sharedProps";
+import { noChildren, classNameSizeandAltText, classNameandAltText } from "./sharedProps";
 import { ICON_NAMES, SHAPES } from "utils/constants";
 
-interface sharedMediaProps extends classNameSizeandAltText {
+
+export interface sharedMediaProps extends classNameSizeandAltText {
     src: string;
     isBackground?: boolean;
+    shape?: SHAPES; //Shapes are only applicable for non-background images
 }
 
 export interface IconProps extends noChildren {
@@ -12,7 +14,10 @@ export interface IconProps extends noChildren {
 }
 
 export interface ImageProps extends sharedMediaProps {
-    shape?: SHAPES; //Shapes are only applicable for non-background images
 }
 
-export interface VideoProps extends sharedMediaProps { }
+export interface VideoProps extends sharedMediaProps { };
+
+export interface EmbedProps extends classNameandAltText {
+    src: string;
+};

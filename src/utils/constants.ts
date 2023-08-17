@@ -4,6 +4,14 @@ export type LINK_TARGETS = '_blank' | '_self';
 export type ALIGNMENTS = 'left' | 'right' | 'center';
 export type SHAPES = 'triangle' | 'circle' | 'box';
 export type BUTTON_VARIANTS = 'primary' | 'secondary' | 'tertiary' | 'transparent' | 'transparent-white' | 'link';
+export type MEDIA_GRID_COLUMNS = 1 | 2 | 3 | 4;
+export type MEDIA_GRID_MOBILE_COLUMNS = 1 | 2 | 3;
+
+export const VIDEO_EXTENSIONS = ['.mp4'];
+export const IMAGE_EXTENSIONS = ['.gif', '.jpg', '.jpeg', '.png'];
+export const YOUTUBE_EXTENSIONS = ['youtube.com/embed/', 'youtu.be/', 'youtube.com/watch?v='];
+export type YOUTUBE_EXTENSIONS_TYPE = 'youtube.com/embed/' | 'youtu.be/' | 'youtube.com/watch?v=';
+
 
 export const SIZE_SM = 'sm';
 export const SIZE_MD = 'md';
@@ -20,6 +28,10 @@ export const BUTTON_LINK: BUTTON_VARIANTS = 'link';
 export const ALIGNMENT_LEFT: ALIGNMENTS = 'left';
 export const ALIGNMENT_RIGHT: ALIGNMENTS = 'right';
 export const ALIGNMENT_CENTER: ALIGNMENTS = 'center';
+
+export const YOUTUBE_EMBED: YOUTUBE_EXTENSIONS_TYPE = 'youtube.com/embed/';
+export const YOUTUBE_WATCH: YOUTUBE_EXTENSIONS_TYPE = 'youtube.com/watch?v=';
+export const YOUTUBE_SHORTENED: YOUTUBE_EXTENSIONS_TYPE = 'youtu.be/';
 
 
 //IMAGE
@@ -46,8 +58,8 @@ export const SHAPE_CIRCLE: SHAPES = 'circle';
 export const SHAPE_TRIANGLE: SHAPES = 'triangle';
 
 export const SOCIALS_ICONS = {
-    "Github": 'github',
-    "LinkedIn": 'linkedin',
+    'Github': 'github',
+    'LinkedIn': 'linkedin',
 }
 
 // SCSS STYLES, ANY CHANGES HERE ALSO SHOULD BE APPLIED IN styles/spacing.scss AS WELL

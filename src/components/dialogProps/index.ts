@@ -1,8 +1,8 @@
 import { CardProps, CardContainerProps } from './cardProps';
 import { ButtonProps, LinkProps } from './linkProps';
 import { HeadingProps, TextProps } from './textProps';
-import { IconProps, ImageProps, VideoProps } from './mediaProps';
-import { BannerProps, ContainerProps, HeroBannerProps, PageBackgroundProps, SpacerProps } from './containerProps';
+import { IconProps, ImageProps, VideoProps, EmbedProps } from './mediaProps';
+import { BannerProps, ContainerProps, HeroBannerProps, PageBackgroundProps, SpacerProps, MediaGridProps } from './containerProps';
 import { FooterColumnProps } from './footerColumnProps';
 
 export type CardPropTypes = CardProps;
@@ -17,6 +17,8 @@ export type TextPropTypes = TextProps;
 export type IconPropTypes = IconProps;
 export type ImagePropTypes = ImageProps;
 export type VideoPropTypes = VideoProps;
+export type EmbedPropTypes = EmbedProps;
+export type MediaGridPropTypes = MediaGridProps;
 
 export type BannerPropTypes = BannerProps;
 export type ContainerPropTypes = ContainerProps;
