@@ -8,8 +8,6 @@ const Media = (props: sharedMediaProps) => {
   const isVideo = isValidMedia === "video";
   const isImage = isValidMedia === "image";
 
-  console.log(props.src);
-
   return isVideo ? <Video {...props} /> : isImage ? <Image {...props} /> : null;
 };
 

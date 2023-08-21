@@ -2,15 +2,28 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
-import HomePage from "./website-skeleton/homepage";
+import { AboutMePage, HomePage, ErrorPage } from "./website-skeleton";
 import NavHeader from "./components/NavHeader/NavHeader";
 import Footer from "./components/Footer/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+    errorElement: <ErrorPage />,
+  },
+
+  {
+    path: "/about",
+    element: <AboutMePage />,
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <NavHeader />
-    <HomePage />
+    <RouterProvider router={router} />
     <Footer />
   </React.StrictMode>
 );
