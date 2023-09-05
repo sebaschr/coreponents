@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
-import { AboutMePage, HomePage, ErrorPage } from "./website-skeleton";
+import { HomePage, ErrorPage } from "structure";
 import NavHeader from "./components/NavHeader/NavHeader";
 import Footer from "./components/Footer/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/about",
-    element: <AboutMePage />,
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

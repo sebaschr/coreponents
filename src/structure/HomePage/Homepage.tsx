@@ -1,6 +1,5 @@
 import React from "react";
-import { HeroBanner, Embed, Container, Media } from "components";
-import MediaGrid from "components/MediaGrid/MediaGrid";
+import { HeroBanner, Embed, Container, Media, MediaGrid } from "components";
 
 const HomePage = () => {
   return (

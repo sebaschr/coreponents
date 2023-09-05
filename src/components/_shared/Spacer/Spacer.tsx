@@ -8,6 +8,7 @@ import { COLOR_BLACK, SIZE_SM } from "utils/constants";
 const Spacer = ({
   backgroundColor = COLOR_BLACK,
   size = SIZE_SM,
+  className,
 }: SpacerPropTypes) => {
   const globalClasses = getGlobalClasses(
     ["backgroundColor"],
@@ -15,7 +16,14 @@ const Spacer = ({
   );
 
   return (
-    <div className={cx(globalClasses, styles.root, styles[`size--${size}`])} />
+    <div
+      className={cx(
+        globalClasses,
+        styles.root,
+        styles[`size--${size}`],
+        className
+      )}
+    />
   );
 };
 

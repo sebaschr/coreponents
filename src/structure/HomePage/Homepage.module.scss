@@ -1,0 +1,80 @@
+@import "styles";
+
+.parent-container {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.column {
+  flex-grow: 1;
+  height: auto;
+  border-left: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: solid 1px color("black");
+
+  img {
+    display: none;
+  }
+
+  &:hover {
+    div {
+      color: white;
+      background-color: black;
+      transition: background-color ease-in-out 0.5s;
+    }
+  }
+
+  @include breakpoint("desktop") {
+    border: solid 1px color("black");
+
+    &:first-child {
+      border-left: solid 1px black;
+    }
+
+    img {
+      display: flex;
+      transform: translateY(100%);
+      transition: transform ease-in-out 0.35s;
+    }
+
+    div {
+      color: color("black");
+      transition: color ease-in-out 0.35s;
+    }
+
+    &:hover {
+      img {
+        transition: transform ease-in-out 1.2s;
+        transform: scale(1.25) translateY(0);
+      }
+      div {
+        background-color: transparent;
+        color: white;
+        transition: color ease-in-out 0.35s;
+      }
+    }
+  }
+
+  &-container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 130px);
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    flex-direction: column;
+
+    @include breakpoint("desktop") {
+      flex-direction: row;
+    }
+  }
+}
+
+.subtitle {
+  position: absolute;
+  bottom: space(4);
+  left: space(4);
+  transform: rotate(90);
+}
