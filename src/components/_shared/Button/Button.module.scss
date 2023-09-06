@@ -7,34 +7,38 @@
   border-radius: toRem(5px);
   margin: 0 space(2);
   transition: 0.5s;
-  color: color("black");
   background: transparent;
 }
 
 .variant {
-  &--primary {
-    @include primary-btn();
-  }
+  @each $name, $glyph in $themes {
+    &-#{$name} {
+      &--link {
+        border-radius: 0;
+        text-decoration: underline;
+        color: themed-color($name, "primary");
+      }
 
-  &--secondary {
-    @include secondary-btn();
-  }
+      &--primary {
+        @include primary-btn($name);
+      }
 
-  &--tertiary {
-    @include tertiary-btn();
-  }
+      &--secondary {
+        @include secondary-btn($name);
+      }
 
-  &--transparent {
-    @include transparent-btn();
-  }
+      &--tertiary {
+        @include tertiary-btn($name);
+      }
 
-  &--transparent-white {
-    @include transparent-white-btn();
-  }
+      &--transparent {
+        @include transparent-btn($name);
+      }
 
-  &--link {
-    border-radius: 0;
-    text-decoration: underline;
+      &--transparent-with-border {
+        @include transparent-with-border-btn($name);
+      }
+    }
   }
 }
 

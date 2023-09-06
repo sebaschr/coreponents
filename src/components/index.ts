@@ -14,7 +14,6 @@ export { default as Loader } from "./_shared/Loader";
 
 export { default as HeroBanner } from "./HeroBanner/HeroBanner";
 export { default as NavHeader } from "./NavHeader/NavHeader";
-export { default as PageBackground } from "./PageBackground/PageBackground";
 export { default as Container } from "./Container/Container";
 export { default as Footer } from "./Footer/Footer";
 export { default as MediaGrid } from "./MediaGrid/MediaGrid";

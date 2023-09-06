@@ -1,19 +1,22 @@
 @import "styles";
 
 .root {
-  background-color: color("black");
+  @each $name, $glyph in $themes {
+    &--#{$name} {
+      background-color: themed-color($name, "primaryBgColor");
+    }
+
+    .back-to-top {
+      background-color: themed-color($name, "primary");
+    }
+  }
 }
 
 .container {
   padding: space(4);
-  color: color("white");
   display: flex;
   flex-direction: column;
   position: relative;
-
-  a {
-    color: color("white");
-  }
 
   @include breakpoint("desktop") {
     padding: space(4) space(8);
@@ -26,11 +29,9 @@
   top: auto;
   bottom: space(20);
   right: space(4);
-  background-color: color("white");
   padding: space(4);
   z-index: $z-index-arrow-top;
   border-radius: 50%;
-  border: solid 1px color("grey");
   opacity: 0.5;
 
   &:hover,
@@ -38,17 +39,6 @@
     opacity: 1;
   }
 }
-
-.socials {
-  & svg {
-    background-color: color("black");
-  }
-
-  & path {
-    fill: color("white");
-  }
-}
-
 .social {
   margin: 0 space(2);
   padding: 0;

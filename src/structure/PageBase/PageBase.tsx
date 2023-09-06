@@ -1,50 +1,43 @@
-import React, { useEffect } from "react";
-import { Container, Heading, NavHeader, Spacer } from "components";
+import React, { useEffect, useState } from "react";
+import { Container, NavHeader, Footer } from "components";
 import styles from "./PageBase.module.scss";
 import { classNameandChildren } from "components/dialogProps/sharedProps";
 import cx from "classnames";
-import { BOOLEAN_FALSE } from "utils/constants";
+import { THEME_LIGHT, ThemeStateModel } from "utils/constants";
 
 type PageBasePropTypes = {
-  headingText: string;
   title: string;
-  noSpacer?: boolean;
 };
+
+export const initialThemeState: ThemeStateModel = {
+  theme: THEME_LIGHT,
+  setTheme: null,
+};
+
+export const ThemeContext = React.createContext(initialThemeState);
 
 const PageBase = ({
   children,
-  headingText,
   title,
   className,
-  noSpacer = BOOLEAN_FALSE,
 }: classNameandChildren & PageBasePropTypes) => {
+  const [theme, setTheme] = useState(initialThemeState.theme);
   useEffect(() => {
     document.title = title;
-  });
+  }, [title]);
 
   return (
-    <>
-      <Container isFullWidth className={styles["main-container"]}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <div className={cx(styles.root, `themed--${theme}`)}>
         <NavHeader />
-
-        <div
-          className={cx(
-            styles.container,
-            styles["heading-container"],
-            className
-          )}
-          id="page-base-container"
-        >
-          <Heading
-            content={headingText}
-            headingStyle="h1"
-            className={styles.heading}
-          />
-          {!noSpacer && <Spacer className={styles.spacer} />}
-          {children}
-        </div>
-      </Container>
-    </>
+        <Container isFullWidth className={styles["main-container"]}>
+          <div className={cx(className)} id="page-base-container">
+            {children}
+          </div>
+        </Container>
+        <Footer />
+      </div>
+    </ThemeContext.Provider>
   );
 };
 

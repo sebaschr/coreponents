@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Footer.module.scss";
 import { Text, Button, Link, Spacer } from "components";
 import { socials } from "services/data";
@@ -6,17 +6,21 @@ import {
   SOCIALS_ICONS,
   SIZE_MD,
   BUTTON_TRANSPARENT,
-  BUTTON_TRANSPARENT_WHITE,
+  BUTTON_TRANSPARENT_WITH_BORDER,
   LINK_TARGET_EXTERNAL,
   COLOR_WHITE,
   SIZE_SM,
 } from "utils/constants";
 import FooterColumn from "./FooterColumn/FooterColumn";
+import { ThemeContext } from "structure/PageBase/PageBase";
+import cx from "classnames";
 
 const NavHeader = () => {
   function topFunction() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const Socials = () => {
     return (
@@ -39,7 +43,7 @@ const NavHeader = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={cx(styles.root, styles[`root--${theme}`])}>
       <div className={styles.container}>
         <div className={styles["content-container"]}>
           <FooterColumn heading={"Footer Col Title"}>
@@ -123,7 +127,18 @@ const NavHeader = () => {
         </div>
 
         <Button
-          variant={BUTTON_TRANSPARENT_WHITE}
+          variant={BUTTON_TRANSPARENT_WITH_BORDER}
+          iconName="arrow-up"
+          iconSize={SIZE_MD}
+          label="Back to Top"
+          onClick={() => {
+            setTheme(theme === "dark" ? "light" : "dark");
+          }}
+          linkText={theme}
+        />
+
+        <Button
+          variant={BUTTON_TRANSPARENT_WITH_BORDER}
           iconName="arrow-up"
           iconSize={SIZE_MD}
           className={styles["back-to-top"]}

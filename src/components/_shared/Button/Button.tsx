@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ButtonPropTypes } from "components/dialogProps";
 import { Icon, Text } from "components";
 import styles from "./Button.module.scss";
 import cx from "classnames";
 import { SIZE_MD, SIZE_SM } from "utils/constants";
+import { ThemeContext } from "structure/PageBase/PageBase";
 
 const Button = ({
   variant,
@@ -23,12 +24,14 @@ const Button = ({
     }
   }
 
+  const { theme } = useContext(ThemeContext);
+
   return (
     <button
       type="button"
       className={cx(
         styles.root,
-        styles[`variant--${variant}`],
+        styles[`variant-${theme}--${variant}`],
         styles[`size--${size}`],
         className
       )}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styles from "./NavHeader.module.scss";
 import { Text, Link, Media, Button, Banner } from "components";
 import { reportWindowSize } from "utils/functions";
@@ -9,12 +9,14 @@ import {
   BUTTON_TRANSPARENT,
 } from "utils/constants";
 import cx from "classnames";
+import { ThemeContext } from "structure/PageBase/PageBase";
 
 // TO DO:Nav Menu Items Submenus & Animations
 
 const NavHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(reportWindowSize);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     function checkScreenSize() {
@@ -78,8 +80,9 @@ const NavHeader = () => {
 
   return (
     <nav
-      className={cx(styles.root, {
+      className={cx(styles.root, styles[`root--${theme}`], {
         [styles["root--open"]]: isOpen && !isDesktop,
+        [styles[`root--open-${theme}`]]: isOpen && !isDesktop,
       })}
     >
       <Banner backgroundColor="grey">

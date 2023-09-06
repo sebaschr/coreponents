@@ -1,39 +1,45 @@
+@import "./colors";
+
+$alignments: (
+  "left": left,
+  "center": center,
+  "right": right
+);
+
 .alignment {
-  &--center {
-    text-align: center;
-  }
-
-  &--left {
-    text-align: left;
-  }
-
-  &--right {
-    text-align: right;
+  @each $name, $glyph in $alignments {
+    &--#{$name} {
+      text-align: $glyph;
+    }
   }
 }
 
 .background-color {
-  &--black {
-    background-color: color("black");
+  @each $name, $glyph in $colors {
+    &--#{$name} {
+      background-color: $glyph;
+    }
   }
+}
 
-  &--white {
-    background-color: color("white");
-  }
+.themed {
+  @each $name, $glyph in $themes {
+    &--#{$name} {
+      background-color: themed-color($name, "primaryBgColor");
+      color: themed-color($name, "primary");
 
-  &--grey {
-    background-color: color("grey");
-  }
+      a {
+        color: themed-color($name, "primary");
+      }
 
-  &--grey-light {
-    background-color: color("grey-light");
-  }
+      svg,
+      path {
+        fill: themed-color($name, "primary");
+      }
 
-  &--grey-opacity {
-    background-color: color("grey-opacity");
-  }
-
-  &--yellow {
-    background-color: color("yellow");
+      .border {
+        border: solid 1px themed-color($name, "borderColor");
+      }
+    }
   }
 }

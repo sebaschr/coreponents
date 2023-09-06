@@ -28,62 +28,64 @@
   }
 }
 
-@mixin primary-btn {
+$buttons: ("primary", "secondary", "tertiary", "transparent", "transparent-white");
+
+@mixin primary-btn($theme) {
   @include btn-mixin(
+    themed-color($theme, "primary"),
+    themed-color($theme, "primaryBgColor"),
+    themed-color($theme, "primary"),
+    color("yellow"),
+    themed-color($theme, "primary"),
+    color("yellow"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primaryBgColor"),
+    themed-color($theme, "primary"),
+    color("light-blue")
+  );
+}
+
+@mixin secondary-btn($theme) {
+  @include btn-mixin(
+    themed-color($theme, "primaryBgColor"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primaryBgColor"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primaryBgColor"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
+    color("light-blue")
+  );
+}
+
+@mixin tertiary-btn($theme) {
+  @include btn-mixin(
+    color("yellow"),
+    color("black"),
     color("black"),
     color("white"),
     color("black"),
-    color("yellow"),
     color("black"),
     color("yellow"),
-    color("black"),
     color("white"),
     color("black"),
     color("light-blue")
   );
 }
 
-@mixin secondary-btn {
-  @include btn-mixin(
-    color("white"),
-    color("black"),
-    color("black"),
-    color("black"),
-    color("white"),
-    color("black"),
-    color("white"),
-    color("black"),
-    color("black"),
-    color("light-blue")
-  );
-}
-
-@mixin tertiary-btn {
-  @include btn-mixin(
-    color("yellow"),
-    color("black"),
-    color("black"),
-    color("white"),
-    color("black"),
-    color("black"),
-    color("yellow"),
-    color("white"),
-    color("black"),
-    color("light-blue")
-  );
-}
-
-@mixin transparent-btn {
+@mixin transparent-btn($theme) {
   @include btn-mixin(
     transparent,
-    color("white"),
+    themed-color($theme, "primary"),
     transparent,
     transparent,
-    color("white"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
     transparent,
-    transparent,
-    color("white"),
-    transparent,
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
     color("light-blue")
   );
 
@@ -92,17 +94,21 @@
   }
 }
 
-@mixin transparent-white-btn {
+@mixin transparent-with-border-btn($theme) {
   @include btn-mixin(
     transparent,
-    color("white"),
-    color("white"),
-    color("white"),
-    color("black"),
-    color("white"),
-    color("white"),
-    color("black"),
-    color("white"),
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
+    transparent,
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
+    transparent,
+    themed-color($theme, "primary"),
+    themed-color($theme, "primary"),
     color("light-blue")
   );
+
+  &:hover {
+    opacity: 0.75;
+  }
 }

@@ -1,13 +1,47 @@
+//General Colors, all Themes
 $colors: (
   "black": #000,
   "white": #fff,
   "yellow": yellow,
   "red": red,
   "light-blue": cyan,
+  "blue": blue,
   //Greys
   "grey": #c0c0c0,
   "grey-opacity": #c0c0c055,
   "grey-light": #c0c0c0,
+  "navy": navy
+);
+
+$themes: (
+  light: (
+    //Text Colors
+    "primary": color("black"),
+    // Main text colors, such as Headings & Text
+    "secondary": color("navy"),
+    // Secondary text color <span> and secondary titles
+    "tertiary": color("grey"),
+    // All the others
+    //Background Colours
+    "primaryBgColor": color("white"),
+    "secondaryBgColor": color("grey"),
+    "tertiaryBgColor": color("grey-opacity"),
+    "borderColor": color("grey")
+  ),
+  dark: (
+    //Text Colors
+    "primary": color("white"),
+    // Main text colors, such as Headings & Text
+    "secondary": color("yellow"),
+    // Secondary text color <span> and secondary titles
+    "tertiary": color("grey"),
+    // All the others
+    //Background Colours
+    "primaryBgColor": color("black"),
+    "secondaryBgColor": color("grey"),
+    "tertiaryBgColor": color("grey-opacity"),
+    "borderColor": color("white")
+  )
 );
 
 @function color($color-key) {
@@ -19,6 +53,16 @@ $colors: (
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$color-key}`. "
                 + "Available colors values are: #{map-keys($colors)}.";
+    @return none;
+  }
+}
+
+@function themed-color($theme, $color-key) {
+  @if map-has-key(map-get($themes, $theme), $color-key) {
+    @return map-get(map-get($themes, $theme), $color-key);
+  } @else {
+    @warn "Unfortunately, the theme provided was not found. "
+                + "Available themes values are: #{map-keys($themes)}.";
     @return none;
   }
 }

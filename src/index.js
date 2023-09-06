@@ -3,8 +3,6 @@ import ReactDOM from "react-dom/client";
 import "styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { HomePage, ErrorPage } from "structure";
-import NavHeader from "./components/NavHeader/NavHeader";
-import Footer from "./components/Footer/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -22,9 +20,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <NavHeader />
     <RouterProvider router={router} />
-    <Footer />
   </React.StrictMode>
 );
 

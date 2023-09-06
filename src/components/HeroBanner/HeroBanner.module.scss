@@ -13,10 +13,6 @@ $filter-opacity: 0.35;
   z-index: $z-index-background;
   height: 100%;
   width: 100%;
-
-  &--filter {
-    z-index: $z-index-filter;
-  }
 }
 
 .container {
@@ -25,7 +21,7 @@ $filter-opacity: 0.35;
   flex-direction: column;
   flex: 1 1 0;
   position: relative;
-  z-index: $z-index-container;
+  z-index: $z-index-content;
 
   &--full {
     width: 100%;
@@ -56,28 +52,11 @@ $filter-opacity: 0.35;
 }
 
 .filter {
-  &--black {
-    background-color: rgba(color("black"), $filter-opacity);
-  }
-
-  &--white {
-    background-color: rgba(color("white"), $filter-opacity);
-  }
-
-  &--grey {
-    background-color: rgba(color("grey"), $filter-opacity);
-  }
-
-  &--grey-light {
-    background-color: rgba(color("grey-light"), $filter-opacity);
-  }
-
-  &--grey-opacity {
-    background-color: rgba(color("grey-opacity"), $filter-opacity);
-  }
-
-  &--yellow {
-    background-color: rgba(color("yellow"), $filter-opacity);
+  @each $name, $glyph in $colors {
+    &--#{$name} {
+      z-index: $z-index-filter;
+      background-color: rgba(color($name), $filter-opacity);
+    }
   }
 }
 
@@ -110,7 +89,7 @@ $filter-opacity: 0.35;
   max-height: 35rem;
   max-width: 100%;
   width: auto;
-  z-index: $z-index-image;
+  z-index: $z-index-background;
   object-fit: scale-down;
 
   &--hidden {

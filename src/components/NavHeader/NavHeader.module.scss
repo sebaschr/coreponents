@@ -5,19 +5,34 @@
   width: 100%;
   top: 0;
   align-items: center;
-  background-color: color("black");
   flex-direction: column;
   z-index: $z-index-nav;
 
   &--open {
     height: 100vh;
     position: absolute;
+    z-index: 99;
+
+    @each $name, $glyph in $themes {
+      &-#{$name} {
+        background-color: themed-color($name, "primaryBgColor");
+      }
+    }
+  }
+  @each $name, $glyph in $themes {
+    &--#{$name} {
+      svg,
+      path,
+      polygon {
+        fill: themed-color($name, "primary");
+        stroke: themed-color($name, "primary");
+      }
+    }
   }
 
   @include breakpoint("desktop") {
     flex-direction: row;
     justify-content: center;
-    color: color("white");
   }
 }
 
@@ -28,14 +43,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  svg,
-  g,
-  path,
-  polygon {
-    fill: white;
-    stroke: white;
-  }
 }
 
 .nav-container {
@@ -60,10 +67,6 @@
   display: flex;
   margin: space(4) 0;
   transition: ease-in-out 0.3s;
-
-  & > a {
-    color: color("white");
-  }
 
   @include breakpoint("desktop") {
     & > a {
@@ -91,6 +94,7 @@
   &-menu {
     width: 90%;
     margin: auto;
+    z-index: 30;
   }
 }
 
