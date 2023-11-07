@@ -127,3 +127,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+//FILL WHOLE SCREEN
+body,
+html {
+  #root {
+    height: 100%;
+  }
+  height: 100vh;
+}
