@@ -5,6 +5,10 @@ $filter-opacity: 0.35;
 .root {
   width: 100%;
   position: relative;
+
+  &--full {
+    width: 100vw;
+  }
 }
 
 .background {
@@ -22,6 +26,7 @@ $filter-opacity: 0.35;
   flex: 1 1 0;
   position: relative;
   z-index: $z-index-content;
+  @include full-width-container();
 
   &--full {
     width: 100%;
@@ -29,11 +34,11 @@ $filter-opacity: 0.35;
     position: relative;
     display: flex;
     flex-direction: column;
+    max-width: none;
 
     @include breakpoint("desktop") {
       flex-direction: row;
       min-height: 20rem;
-      @include full-width-container();
     }
   }
 }

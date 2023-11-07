@@ -39,6 +39,7 @@ export interface HeroBannerProps extends sharedBannerProps {
   backgroundImageSrc?: string;
   imageFirst?: boolean;
   hideOnMobile?: boolean;
+  fullSize?: boolean;
 }
 
 export interface ContainerProps extends classNameSizeandChildren {
